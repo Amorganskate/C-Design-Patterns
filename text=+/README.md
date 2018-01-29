@@ -61,4 +61,23 @@
                 return schedule;
             }
         }
+        
+#### Update
+
+public bool UpdateDay(int "Param")
+{
+    using (SqlConnection connection = new SqlConnection(connectionStr))
+    {
+        SqlCommand cmd = new SqlCommand("Sproc", connection);
+        cmd.CommandType = CommandType.StoredProcedure;
+
+        cmd.Parameters.AddWithValue("Param", Param);
+
+        connection.Open();
+        bool result = (cmd.ExecuteNonQuery() == 1);
+        connection.Close();
+
+        return result;
+    }
+}
 
