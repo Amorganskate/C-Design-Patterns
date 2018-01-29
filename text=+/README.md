@@ -34,6 +34,7 @@
         
         
 #### Get By ID
+
         public "Object" GetByID(int "Object")
         {
             using (SqlConnection connection = new SqlConnection(connectionStr))
@@ -64,20 +65,20 @@
         
 #### Update
 
-public bool UpdateDay(int "Param")
-{
-    using (SqlConnection connection = new SqlConnection(connectionStr))
+    public bool Update(int "Param")
     {
-        SqlCommand cmd = new SqlCommand("Sproc", connection);
-        cmd.CommandType = CommandType.StoredProcedure;
+        using (SqlConnection connection = new SqlConnection(connectionStr))
+        {
+            SqlCommand cmd = new SqlCommand("Sproc", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-        cmd.Parameters.AddWithValue("Param", Param);
+            cmd.Parameters.AddWithValue("Param", Param);
 
-        connection.Open();
-        bool result = (cmd.ExecuteNonQuery() == 1);
-        connection.Close();
+            connection.Open();
+            bool result = (cmd.ExecuteNonQuery() == 1);
+            connection.Close();
 
-        return result;
+            return result;
+        }
     }
-}
 
