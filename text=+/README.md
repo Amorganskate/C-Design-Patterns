@@ -1,6 +1,6 @@
 # Data Access
 
-'''c#
+
     
     public List<"Object"> GetAll()
         {
@@ -29,4 +29,4 @@
             }
         }
         
-'''
+
