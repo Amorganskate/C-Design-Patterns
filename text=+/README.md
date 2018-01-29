@@ -1,7 +1,10 @@
 # Data Access
 
 
-  ### CSharp  
+### CSharp  
+  
+  
+#### Get All
     public List<"Object"> GetAll()
         {
             using (SqlConnection connection = new SqlConnection(connectionStr))
@@ -29,6 +32,8 @@
             }
         }
         
+        
+#### Get By ID
         public "Object" GetByID(int "Object")
         {
             using (SqlConnection connection = new SqlConnection(connectionStr))
