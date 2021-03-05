@@ -43,7 +43,7 @@
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("SQLParam", Param);
 
-                LiveChatSchedule schedule = null;
+                "Object" schedule = null;
 
                 connection.Open();
 
